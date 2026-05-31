@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>RAM HUB | مجموعه ابزارهای رم‌تین</title>
+    <!-- Font Awesome Icons (v6 free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', system-ui, 'Vazir', sans-serif;
+        }
+
+        body {
+            background: #fffef7;
+            padding: 2rem 1.5rem;
+            color: #2d3e50;
+        }
+
+        /* تم سفید و لیمویی ملایم (مانند رم سی) */
+        .card {
+            background: #ffffff;
+            border-radius: 1.75rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(255,200,100,0.1);
+            border: 1px solid #fff0d6;
+            overflow: hidden;
+        }
+
+        .btn {
+            background: #fffcf5;
+            border: 1px solid #ffe2b5;
+            padding: 0.7rem 1.6rem;
+            border-radius: 2.5rem;
+            font-weight: 500;
+            font-size: 0.85rem;
+            cursor: pointer;
+            color: #b97f2e;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: #f9e0a0;
+            border: none;
+            color: #784a0e;
+            box-shadow: 0 2px 4px rgba(249, 200, 100, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #f7d97e;
+            transform: translateY(-2px);
+        }
+
+        /* کارت‌های بزرگ با عکس و دکمه */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .tool-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            border: 1px solid #fff0df;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+            border-color: #ffe2bc;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #fefaf2;
+            border-bottom: 2px solid #fff0df;
+            transition: transform 0.4s ease;
+        }
+
+        .tool-card:hover .card-image {
+            transform: scale(1.02);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #c8821f;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .card-subtitle {
+            font-size: 0.8rem;
+            color: #a0763a;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #ffe2bc;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .card-description {
+            color: #5a6e7c;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 1.2rem;
+            flex-grow: 1;
+        }
+
+        .card-buttons {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.7rem;
+            color: #bfae95;
+            border-top: 1px solid #fff0e2;
+            padding-top: 1rem;
+        }
+
+        h1 {
+            font-weight: 700;
+            color: #c8821f;
+            letter-spacing: -0.3px;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero-section p {
+            color: #a0763a;
+            max-width: 650px;
+            margin: 0.5rem auto 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 680px) {
+            body {
+                padding: 1rem;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .card-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* دکمه گیت‌هاب هدر */
+        .header-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        .github-btn {
+            background: #f5f0e8;
+            border: 1px solid #ffe2b5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div style="padding: 1.8rem 1.8rem 0 1.8rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+            <div>
+                <h1>RAM HUB</h1>
+                <span style="font-size:0.7rem; color:#cc9a5c;">مرجع کامل ابزارهای رم‌تی · حرفه‌ای، سریع و کاملاً محلی</span>
+            </div>
+            <div class="header-actions">
+                <a href="https://github.com/ramtinhossinbiki" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <button class="btn github-btn"><i class="fab fa-github"></i> گیت‌هاب</button>
+                </a>
+            </div>
+        </div>
+        <div class="hero-section">
+            <p>🔧 مجموعه‌ای از قدرتمندترین ابزارهای تحت وب با تم اختصاصی RAM  — بدون نیاز به سرور، کاملاً خصوصی و ایمن</p>
+        </div>
+    </div>
+
+    <div style="padding: 0 1.8rem 1.8rem 1.8rem;">
+        <!-- شبکه کارت‌های ابزارها با عکس و دکمه‌های بزرگ -->
+        <div class="tools-grid">
+            <!-- ابزار 1: پاکساز هوشمند -->
+            <div class="tool-card">
+                <img class="card-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e5a12e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 6h18M9 12h6M5 18h14'/%3E%3Ccircle cx='12' cy='6' r='2'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3Ccircle cx='12' cy='18' r='2'/%3E%3C/svg%3E" alt="RAMTIN CLEAN">
+                <div class="card-content">
+                    <div class="card-title">RAM C <span style="font-size: 0.8rem;">⚡</span></div>
+                    <div class="card-subtitle">RAMTIN CLEAN · پاکساز هوشمند</div>
+                    <div class="card-description">
+                        اسکن عمیق پوشه‌ها، شناسایی فایل‌های تکراری (با محاسبه هش)، حذف پوشه‌های خالی و فایل‌های مشکوک. کاملاً آفلاین و امن.
+                    </div>
+                    <div class="card-buttons">
+                        <a href="https://ramtinhossinbiki-afk.github.io/ram-clean/" target="_blank" class="btn btn-primary btn-small"><i class="fas fa-broom"></i>  اجرای پاکساز</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ابزار 2: گردونه شانس -->
+            <div class="tool-card">
+                <img class="card-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e5a12e' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 3v6l3 3-3 3v6'/%3E%3C/svg%3E" alt="RAMTIN CIRCLE">
+                <div class="card-content">
+                    <div class="card-title">RAM C <span style="font-size: 0.8rem;">🎡</span></div>
+                    <div class="card-subtitle">RAMTIN CIRCLE · گردونه شانس</div>
+                    <div class="card-description">
+                        طراحی گردونه تعاملی با قابلیت وارد کردن نام شرکت‌کنندگان، چرخش تصادفی، حذف برنده از گردونه و نمایش جذاب برنده.
+                    </div>
+                    <div class="card-buttons">
+                        <a href="https://ramtinhossinbiki-afk.github.io/RAM-C/" target="_blank" class="btn btn-primary btn-small"><i class="fas fa-gamepad"></i>  چرخاندن گردونه</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ابزار 3: تبدیل عکس به PDF با کیفیت بالا -->
+            <div class="tool-card">
+                <img class="card-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e5a12e' stroke-width='1.5'%3E%3Cpath d='M4 4h16v16H4z'/%3E%3Cpath d='M8 8h8M8 12h8M8 16h4'/%3E%3C/svg%3E" alt="RAMTIN PDF">
+                <div class="card-content">
+                    <div class="card-title">RAM P <span style="font-size: 0.8rem;">📄</span></div>
+                    <div class="card-subtitle">RAMTIN PDF · تبدیل عکس با کیفیت بالا</div>
+                    <div class="card-description">
+                        ترکیب چند عکس در یک فایل PDF با تنظیمات حرفه‌ای (اندازه صفحه، کیفیت، حاشیه، جهت خودکار). پردازش در مرورگر بدون آپلود.
+                    </div>
+                    <div class="card-buttons">
+                        <a href="https://ramtinhossinbiki-afk.github.io/RAM-P/" target="_blank" class="btn btn-primary btn-small"><i class="fas fa-file-pdf"></i>  ساخت PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ابزار 4: تبدیل فرمت فایل‌ها -->
+            <div class="tool-card">
+                <img class="card-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e5a12e' stroke-width='1.5'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7'/%3E%3C/svg%3E" alt="RAMTIN CONVERT FILES">
+                <div class="card-content">
+                    <div class="card-title">RAM C.F <span style="font-size: 0.8rem;">🔄</span></div>
+                    <div class="card-subtitle">RAMTIN CONVERT FILES · تبدیل فرمت فایل‌ها</div>
+                    <div class="card-description">
+                        تبدیل بین فرمت‌های تصویر، متن، کد (JSON↔CSV, HTML به TXT, Markdown به HTML و...) و تغییر پسوند فایل‌های ویدئویی/صوتی.
+                    </div>
+                    <div class="card-buttons">
+                        <a href="https://ramtinhossinbiki-afk.github.io/RAM-C.F/" target="_blank" class="btn btn-primary btn-small"><i class="fas fa-exchange-alt"></i>  تبدیل فایل</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ابزار 5: ساخت فاوآیکون حرفه‌ای -->
+            <div class="tool-card">
+                <img class="card-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e5a12e' stroke-width='1.5'%3E%3Crect x='4' y='4' width='16' height='16' rx='2'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E" alt="RAMTIN FAVICON">
+                <div class="card-content">
+                    <div class="card-title">RAM F <span style="font-size: 0.8rem;">⭐</span></div>
+                    <div class="card-subtitle">RAMTIN FAVICON · ساخت فاوآیکون حرفه‌ای</div>
+                    <div class="card-description">
+                        آپلود تصویر و دریافت تمام اندازه‌های استاندارد فاوآیکون (ICO, PNG, manifest) به همراه کد HTML آماده. کاملاً آفلاین.
+                    </div>
+                    <div class="card-buttons">
+                        <a href="https://ramtinhossinbiki-afk.github.io/RAM-F/" target="_blank" class="btn btn-primary btn-small"><i class="fas fa-star"></i>  ساخت فاوآیکون</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            🔒 تمام ابزارها کاملاً محلی هستند · فایل‌ها هرگز به سرور ارسال نمی‌شوند · رم‌سی مجموعه‌ای از قدرتمندترین ابزارهای تحت وب
+        </footer>
+    </div>
+</div>
+
+</body>
+</html>
