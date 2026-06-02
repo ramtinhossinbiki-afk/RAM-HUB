@@ -219,12 +219,44 @@
                 font-size: 1.3rem;
             }
         }
+
+        /* استایل بنر تبلیغاتی ساده (فقط عکس) */
+        .top-banner {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .top-banner a {
+            display: inline-block;
+            transition: transform 0.2s ease;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .top-banner a:hover {
+            transform: scale(1.01);
+        }
+        .top-banner img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            background: #fefaf2;
+            border-radius: 1rem;
+        }
     </style>
 </head>
 <body>
 
 <div class="card">
     <div style="padding: 1.8rem 1.8rem 0 1.8rem;">
+        
+        <!-- =============== بنر تبلیغاتی فقط عکس (قابل ویرایش) =============== -->
+        <div class="top-banner">
+            <a href="https://your-link.com" target="_blank" rel="noopener noreferrer" id="bannerLink">
+                <img src="https://placehold.co/800x200/FFE2BC/C8821F?text=RAM+HUB+Ad+Banner" alt="تبلیغ" id="bannerImage">
+            </a>
+        </div>
+        <!-- =============== پایان بنر =============== -->
+
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
             <div>
                 <h1>RAM HUB</h1>
@@ -452,8 +484,5 @@
     </div>
 </div>
 
-<script>
-    console.log("RAM HUB version 1.2 ready");
-</script>
 </body>
 </html>
